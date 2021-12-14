@@ -8,7 +8,14 @@ namespace Example
     {
         public static void Main(string[] args)
         {
-            XmlConfigurator.Configure();
+
+// Rename SEE_CODE_FOR_SPECIAL_PERSONAL_ENVIROMENT to this conditional compilation symbol to load personal log4net settings
+#if PERSONAL_ENVIROMENT
+            XmlConfigurator.Configure(new System.IO.FileInfo("AppDev.config"));
+#else
+
+            XmlConfigurator.Configure(); 
+#endif
 
             var logger = LogManager.GetLogger(typeof(Program));
             logger.Debug("Hello World!");

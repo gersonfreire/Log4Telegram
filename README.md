@@ -1,6 +1,8 @@
 # Log4Telegram
 Log4net appender that allows you to send log messages using Telegram
 
+Forked from https://github.com/dseller/Log4Telegram and updated Log4Net and Newtonsoft nuget packages
+
 ## What does it do?
 
 Quite simple: it takes your logging events, and forwards them to the Telegram Bot API. 
